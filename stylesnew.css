@@ -1,0 +1,67 @@
+#banner_back{
+	background-color:#FFE4FB;
+	z-index:50000;
+	height:100px;
+}
+
+#banner{
+	color:#1F0043;
+	text-align:center;
+	font-family: 'Kanit', sans-serif;
+}
+
+#banner:hover{
+	color:#E50071;
+}
+
+.bigtext {
+	font-size: 80px;
+	background: -webkit-linear-gradient(#1F0043, #E50071);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+}
+
+#body_back {
+	background-color:#1F0043;
+	color:White;
+	/*background-image: linear-gradient(#B200B2, #FFFFFF);*/
+	background-image:linear-gradient(-137deg, #1F0043 0%, #E50071 100%);
+	font-family: 'Quicksand', sans-serif;
+	height: 100%;
+	overflow: hidden;
+	text-align:center;
+}
+
+html, body {
+
+}
+
+.buttons{
+	padding-top: 15%;
+	margin: auto;
+	max-width: 100%;
+	text-align:center;
+	display:block;
+}
+
+#stats {
+	font-size: 20px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#mapid { 
+	height: 500px;
+	width: 800px;
+}
+
+#bmicalc{
+	padding-top: 0;
+}
+
+#quotes{
+	padding-top: 4%;
+	padding-bottom: 8%;
+	font-style: italic;
+	font-size: 20px;
+	font-family: 'Quicksand', sans-serif;
+}

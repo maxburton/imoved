@@ -1,0 +1,85 @@
+
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+      <script src="scripts.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Kanit|Oxygen|Quicksand" rel="stylesheet">
+      <link rel="stylesheet" href="stylesnew.css">
+      <title>IMoved</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   </head>
+   <body>
+      <div id="banner_back" class="container-fluid">
+         <div id="banner" class="bigtext">
+            <h1 class="bigtext">
+               <a href="javascript:window.location.href=window.location.href">I&nbsp;&nbsp; M &nbsp;&nbsp;O &nbsp;&nbsp;V &nbsp;&nbsp;E &nbsp;&nbsp;D</a>
+            </h1>
+         </div>
+      </div>
+      <div id="body_back" class="container-fluid">
+		<div class="row buttons">
+			<form id="form" action="" method="">
+               <input type="file" id="input" />
+               <input type="button" value="Submit" id="inputButton" onclick="upload_gpx_pressed()">
+            </form>
+		</div>
+         </br></br>
+         <div class="row" id="stats">
+            <div class="col"></div>
+            <div id="track_name" class="col">
+            </div>
+            <div id="heart_rate" class="col">
+            </div>
+            <div id="distance" class="col">
+            </div>
+	    <div id="top_speed" class="col">
+            </div>
+            <div class="col"></div>
+         </div>
+         <br><br>
+         <div class="row">
+<div id="charts" class="col-1"></div>
+            <div id="mapid" style="visibility:hidden" class="col-6">
+            </div>
+            
+            <div id="charts" class="col-4">
+               <canvas id="elevations"></canvas>
+               <canvas id="speeds"></canvas>
+            </div>
+<div id="charts" class="col-1"></div>
+         </div>
+	    
+            <script>
+               var mymap = L.map('mapid').setView([55.8555367, -4.3024979], 13);
+               L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidG9nd2VsbGgiLCJhIjoiY2puNXk1NDY4MDZ2aTN4cmZwMTdoNnN3YyJ9.zFUG8xDuqXkEZqDSt2wUyw', {
+                   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                   maxZoom: 18,
+                   id: 'mapbox.streets',
+                   accessToken: 'your.mapbox.access.token'
+               }).addTo(mymap);
+            </script>
+		<div id="quotes">
+			"Run at me bro" - Max 2018
+		</div>
+         <div id="bmicalc">
+            <h1>Body Mass Index Calculator</h1>
+            <p>Enter your height in centimetres : <input type="text" id="height" placeholder="Height (cm)"/>
+            </p>
+            <p>Enter your weight in kilograms : <input type="text" id="weight" placeholder="Weight (kg)"/>
+            </p>
+            <input type="submit" value="computeBMI" onclick="computeBMI();">
+            <h1 class="bmi" style="visibility:hidden">Your BMI is: <span id="output">?</span></h1>
+            <h2 class="bmi" style="visibility:hidden">Your result suggests you are : <span id="comment"> ?</span> </h2>
+         </div>
+      </div>
+   </body>
+</html>
