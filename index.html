@@ -12,74 +12,92 @@
       <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Kanit|Oxygen|Quicksand" rel="stylesheet">
-      <link rel="stylesheet" href="stylesnew.css">
-      <title>IMoved</title>
-      <meta charset="utf-8">
+      <link rel="stylesheet" href="styles.css">
+      <title>iMoved</title>
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    </head>
    <body>
-      <div id="banner_back" class="container-fluid">
-         <div id="banner" class="bigtext">
+      <div id="banner_back" class="container-fluid row">
+	
+	 <div class="col-2"></div>
+         <div id="banner" class="bigtext col-8">
             <h1 class="bigtext">
                <a href="javascript:window.location.href=window.location.href">I&nbsp;&nbsp; M &nbsp;&nbsp;O &nbsp;&nbsp;V &nbsp;&nbsp;E &nbsp;&nbsp;D</a>
             </h1>
          </div>
+	 <div id="bmibut" class="col-2">
+		<label class="btn btn-secondary btn-lg btn-block butBit bmiBit" onClick="document.getElementById('bmicalc').scrollIntoView();"><b>BMI Calc</b>
+                  </label>
+	 </div>
       </div>
       <div id="body_back" class="container-fluid">
-		<div class="row buttons">
-			<form id="form" action="" method="">
-               <input type="file" id="input" />
-               <input type="button" value="Submit" id="inputButton" onclick="upload_gpx_pressed()">
-            </form>
-		</div>
+         <div class="row buttons" id="rb">
+            <label class="btn btn-secondary btn-lg btn-block butBit" onchange="upload_gpx_pressed()" id="butLab"><b id="uploadTxt">Upload A GPX File</b>
+            <input type="file" id="bigBut"/>
+            </label>
+         </div>
          </br></br>
+         <div class="row" id="name_head">
+            <div id="track_name" class="col"></div>
+         </div>
          <div class="row" id="stats">
             <div class="col"></div>
-            <div id="track_name" class="col">
-            </div>
             <div id="heart_rate" class="col">
             </div>
             <div id="distance" class="col">
             </div>
-	    <div id="top_speed" class="col">
+            <div id="avg_speed" class="col">
+            </div>
+            <div id="time_taken" class="col">
             </div>
             <div class="col"></div>
          </div>
          <br><br>
          <div class="row">
-<div id="charts" class="col-1"></div>
+            <div id="charts" class="col-1"></div>
             <div id="mapid" style="visibility:hidden" class="col-6">
             </div>
-            
             <div id="charts" class="col-4">
                <canvas id="elevations"></canvas>
                <canvas id="speeds"></canvas>
             </div>
-<div id="charts" class="col-1"></div>
+            <div id="charts" class="col-1"></div>
          </div>
-	    
-            <script>
-               var mymap = L.map('mapid').setView([55.8555367, -4.3024979], 13);
-               L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidG9nd2VsbGgiLCJhIjoiY2puNXk1NDY4MDZ2aTN4cmZwMTdoNnN3YyJ9.zFUG8xDuqXkEZqDSt2wUyw', {
-                   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                   maxZoom: 18,
-                   id: 'mapbox.streets',
-                   accessToken: 'your.mapbox.access.token'
-               }).addTo(mymap);
-            </script>
-		<div id="quotes">
-			"Run at me bro" - Max 2018
-		</div>
-         <div id="bmicalc">
-            <h1>Body Mass Index Calculator</h1>
-            <p>Enter your height in centimetres : <input type="text" id="height" placeholder="Height (cm)"/>
-            </p>
-            <p>Enter your weight in kilograms : <input type="text" id="weight" placeholder="Weight (kg)"/>
-            </p>
-            <input type="submit" value="computeBMI" onclick="computeBMI();">
-            <h1 class="bmi" style="visibility:hidden">Your BMI is: <span id="output">?</span></h1>
-            <h2 class="bmi" style="visibility:hidden">Your result suggests you are : <span id="comment"> ?</span> </h2>
+         <script>
+            var mymap = L.map('mapid').setView([55.8555367, -4.3024979], 13);
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidG9nd2VsbGgiLCJhIjoiY2puNXk1NDY4MDZ2aTN4cmZwMTdoNnN3YyJ9.zFUG8xDuqXkEZqDSt2wUyw', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox.streets',
+                accessToken: 'your.mapbox.access.token'
+            }).addTo(mymap);
+         </script>
+	</br></br>
+         <div id="tips"><b>
+            The only bad workout is one that didn't happen!
+         </b></div>
+	 </br>
+         <div class="row fluid-container" id="bmirow">
+            <div class="col"></div>
+            <div id="bmicalc" class="col">
+               <div id="bmiback">
+                  <h1>Body Mass Index Calculator</h1>
+                  <p>Enter your height in centimetres : <input type="text" id="height" placeholder="Height (cm)"/>
+                  </p>
+                  <p>Enter your weight in kilograms : <input type="text" id="weight" placeholder="Weight (kg)"/>
+                  </p>
+                  <label class="btn btn-secondary btn-lg btn-block butBit bmiBits" onclick="computeBMI();" id="bmiLab"><b>Compute BMI</b>
+                  <input type="submit" id="computeBMI" onclick="computeBMI();"/>
+                  </label>
+                  <h1 class="bmi" style="visibility:hidden">Your BMI is: <span id="output">?</span></h1>
+                  <h2 class="bmi" style="visibility:hidden">Your result suggests you are : <span id="comment"> ?</span> </h2>
+               </div>
+            </div>
+            <div class="col"></div>
          </div>
       </div>
    </body>
 </html>
+
+

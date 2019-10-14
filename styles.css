@@ -1,97 +1,136 @@
-li {
-	
-}
-
-h1 {
-
-}
-
 #banner_back{
-position:fixed;
-background-color:#FFE4FB;
-left:-10px;
-top:-1%;
-width:101.5%;
-height:100px;
-z-index:50000;
-/*background-image:linear-gradient(180deg, #bab2fc 60%, #9bdaff 100%);*/
-/*background-image:linear-gradient(-137deg, #1F0043 0%, #E50071 100%);*/
+	background-color:#FFE4FB;
+	z-index:50000;
+	height:100px;
 }
 
 #banner{
-position:relative;
-top:-80%;
-transition: all .2s ease-in-out;
-color:#1F0043;
-text-align:center;
-font-family: 'Kanit', sans-serif;
+	color:#1F0043;
+	text-align:center;
+	font-family: 'Kanit', sans-serif;
 }
 
 #banner:hover{
-color:#E50071;
+	color:#E50071;
 }
 
 .bigtext {
-font-size: 45px;
-background: -webkit-linear-gradient(#1F0043, #E50071);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	font-size: 80px;
+	background: -webkit-linear-gradient(#1F0043, #E50071);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
 }
 
 #body_back {
-position:relative;
-top:9%;
-left:-1%;
-width:101.5%;
-height:130%;
-background-color:#1F0043;
-color:White;
-/*background-image: linear-gradient(#B200B2, #FFFFFF);*/
-background-image:linear-gradient(-137deg, #1F0043 0%, #E50071 100%);
-font-family: 'Quicksand', sans-serif;
+	background-color:#1F0043;
+	color:White;
+	/*background-image: linear-gradient(#B200B2, #FFFFFF);*/
+	background-image:linear-gradient(-137deg, #1F0043 0%, #E50071 100%);
+	font-family: 'Quicksand', sans-serif;
+	height: 150%;
+	overflow: hidden;
+	text-align:center;
 }
 
-#upload{
-position:absolute;
-font-size:20px;
-top:1000px;
-left:40%;
+body {
+	background-color:#FFE4FB;
+	scroll-behavior: smooth;
+}
+
+a{
+	text-decoration: none; /* no underline */
+}
+
+a:hover{
+	text-decoration: none; /* no underline */
+}
+
+.buttons{
+	padding-top: 15%;
+	margin: auto;
+	max-width: 100%;
+	text-align:center;
+	display:block;
+}
+
+#stats {
+	font-size: 20px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 #mapid { 
-position:absolute;
-top:160px;
-height: 500px;
-width: 800px;
-left:30%;
- }
-
-#track_name {
-position:absolute;
-top:100px;
-left:45%;
+	height: 600px;
 }
 
-#heart_rate {
-position:absolute;
-top:120px;
-left:45%;
+#bmicalc{
+	padding-top: 0;
 }
 
-#distance {
-position:absolute;
-top:150px;
-left:45%;
+#quotes{
+	padding-top: 4%;
+	padding-bottom: 8%;
+	font-style: italic;
+	font-size: 20px;
+	font-family: 'Quicksand', sans-serif;
 }
 
-#form {
-position:absolute;
-left:40%;
-top:140px;
+#track_name{
+	padding-bottom: 2%;
 }
 
-#bmicalc {
-position:absolute;
-left:35%;
-top:20%;
+#bigBut{
+    display:none;
+}
+
+#computeBMI{
+    display:none;
+}
+
+.butBit{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:60%;
+    height:70px;
+    background-color:#381051;
+    vertical-align: middle;
+    font-size:30px;
+}
+
+.bmiBit{
+    width:170px;
+}
+
+.bmiBits{
+    width:300px;
+}
+
+#bmirow{
+    height:200%;
+}
+
+#bmibut{
+    top:15%;
+    display: inline-block;
+}
+
+#bmibut b{
+    position:absolute;
+    left:35px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#bmiback{
+    background-color:#2A2A2A;
+    border-radius:25px;
+    top:-20px;
+    height:400px;
+}
+
+#track_name{
+    font-size:25px;
 }
